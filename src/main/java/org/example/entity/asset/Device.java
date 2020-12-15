@@ -14,7 +14,7 @@ import javax.persistence.Id;
 public class Device {
 
     @Id
-    private String ID;
+    private String deviceID;
 
     private String model;
     private String manufacturer;
@@ -22,21 +22,18 @@ public class Device {
     private double value;
     private double depreciatedValue;
 
-    private String vehicleID;
-
     protected Device() {
     }
-    public Device(Builder b) {
-        this.ID = b.ID;
+    private Device(Builder b) {
+        this.deviceID = b.deviceID;
         this.model = b.model;
         this.manufacturer = b.manufacturer;
         this.value = b.value;
         this.depreciatedValue = b.depreciatedValue;
-        this.vehicleID = b.vehicleID;
     }
 
-    public String getID() {
-        return ID;
+    public String getDeviceID() {
+        return deviceID;
     }
 
     public String getModel() { return model; }
@@ -53,35 +50,28 @@ public class Device {
         return depreciatedValue;
     }
 
-    public String getVehicleID() {
-        return vehicleID;
-    }
-
     @Override
     public String toString() {
         return "Device{" +
-                "ID='" + ID + '\'' +
+                "ID='" + deviceID + '\'' +
                 ", model='" + model + '\'' +
                 ", manufacturer='" + manufacturer + '\'' +
                 ", value=" + value +
                 ", depreciatedValue=" + depreciatedValue +
-                ", vehicleID='" + vehicleID + '\'' +
                 '}';
     }
 
     public static class Builder{
 
-        private String ID;
+        private String deviceID;
         private String model;
         private String manufacturer;
 
         private double value;
         private double depreciatedValue;
 
-        private String vehicleID;
-
-        public Builder setID(String ID) {
-            this.ID = ID;
+        public Builder setDeviceID(String deviceID) {
+            this.deviceID = deviceID;
             return this;
         }
 
@@ -105,19 +95,13 @@ public class Device {
             return this;
         }
 
-        public Builder setVehicleID(String vehicleID) {
-            this.vehicleID = vehicleID;
-            return this;
-        }
-
         public Builder copy(Device d){
 
-            this.ID = d.ID;
+            this.deviceID = d.deviceID;
             this.model = d.model;
             this.manufacturer = d.manufacturer;
             this.value = d.value;
             this.depreciatedValue = d.depreciatedValue;
-            this.vehicleID = d.vehicleID;
 
             return this;
         }

@@ -19,23 +19,17 @@ public class Delivery {
 
     private String route;
     private int distance;
-    private int stops;
-
-    private String driverID;
-    private String vehicleID;
-    private String helperID;
+    private int stops;;
 
     protected Delivery() {
     }
 
-    public Delivery(Builder b) {
+    private Delivery(Builder b) {
         this.deliveryNo = b.deliveryNo;
         this.route = b.route;
-        this.distance = b.distance;
+        //this.distance = b.distance;
         this.stops = b.stops;
-        this.driverID = b.driverID;
-        this.helperID = b.helperID;
-        this.vehicleID = b.vehicleID;
+
     }
 
     public String getDeliveryNo() {
@@ -46,36 +40,20 @@ public class Delivery {
         return route;
     }
 
-    public int getDistance() {
+    /*public int getDistance() {
         return distance;
-    }
+    }*/
 
     public int getStops() {
         return stops;
-    }
-
-    public String getDriverID() {
-        return driverID;
-    }
-
-    public String getHelperID() {
-        return helperID;
-    }
-
-    public String getVehicleID() {
-        return vehicleID;
     }
 
     public static class Builder{
 
         private String deliveryNo;
         private String route;
-        private int distance;
+        //private int distance;
         private int stops;
-
-        private String driverID;
-        private String helperID;
-        private String vehicleID;
 
         public Builder setDeliveryNo(String deliveryNo) {
             this.deliveryNo = deliveryNo;
@@ -87,28 +65,13 @@ public class Delivery {
             return this;
         }
 
-        public Builder setDistance(int distance) {
+       /* public Builder setDistance(int distance) {
             this.distance = distance;
             return this;
-        }
+        }*/
 
         public Builder setStops(int stops) {
             this.stops = stops;
-            return this;
-        }
-
-        public Builder setDriverID(String driverID) {
-            this.driverID = driverID;
-            return this;
-        }
-
-        public Builder setHelperID(String helperID) {
-            this.helperID = helperID;
-            return this;
-        }
-
-        public Builder setVehicleID(String vehicleID) {
-            this.vehicleID = vehicleID;
             return this;
         }
 
@@ -116,11 +79,8 @@ public class Delivery {
 
             this.deliveryNo = d.deliveryNo;
             this.route = d.route;
-            this.distance = d.distance;
+            //this.distance = d.distance;
             this.stops = d.stops;
-            this.driverID = d.driverID;
-            this.helperID = d.helperID;
-            this.vehicleID = d.vehicleID;
 
             return this;
         }

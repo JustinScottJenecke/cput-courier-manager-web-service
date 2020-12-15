@@ -14,20 +14,14 @@ public class DeliveryFactory {
 
     public static Delivery createDelivery(String deliveryNo,
                                           String route,
-                                          int distance,
-                                          int stops,
-                                          String driverID,
-                                          String helperID,
-                                          String vehicleID){
+                                          //int distance,
+                                          int stops){
 
         Delivery delivery = new Delivery.Builder()
                 .setDeliveryNo(deliveryNo)
                 .setRoute(route)
-                .setDistance(distance)
+                //.setDistance(distance)
                 .setStops(stops)
-                .setDriverID(driverID)
-                .setHelperID(helperID)
-                .setVehicleID(vehicleID)
                 .build();
 
         return delivery;

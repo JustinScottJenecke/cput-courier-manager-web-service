@@ -7,26 +7,36 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class DriverService implements IDriverService {
 
-   // @Autowired
-   // IDriverRepository driverRepository;
+    @Autowired
+    IDriverRepository driverRepository;
 
     @Override
     public Driver create(Driver x) {
-        return null;
+        return this.driverRepository.save(x);
     }
 
     @Override
     public Driver read(String ID) {
-        return null;
+        return this.driverRepository.findById(ID).orElseGet(null);
     }
 
     @Override
     public Driver update(Driver x, String ID) {
+
+        if(this.driverRepository.existsById(x.getDriverID())){
+
+            return this.driverRepository.save(x);
+        }
         return null;
     }
 
     @Override
     public boolean delete(String ID) {
-        return false;
+
+        this.driverRepository.deleteById(ID);
+        if (this.driverRepository.existsById(ID))
+            return false;
+        else
+            return true;
     }
 }

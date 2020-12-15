@@ -12,23 +12,20 @@ import org.example.entity.asset.Device;
 
 public class DeviceFactory {
 
-    public static Device createDevice(String ID,
+    public static Device createDevice(String deviceID,
                                         String model,
                                         String manufacturer,
                                         double value,
-                                        double depreciatedValue,
-                                        String vehicleID){
+                                        double depreciatedValue){
 
         Device device = new Device.Builder()
-                .setID(ID)
+                .setDeviceID(deviceID)
                 .setModel(model)
                 .setManufacturer(manufacturer)
                 .setValue(value)
                 .setDepreciatedValue(depreciatedValue)
-                .setVehicleID(vehicleID)
                 .build();
 
         return device;
     }
-
 }

@@ -24,15 +24,13 @@ public class VehicleFactoryTest {
                 "Buck",
                 100000,
                 80000,
-                12000,
-                "4D15");
+                12000);
 
-        assertEquals("1D91",vehicle.getID());
+        assertEquals("1D91",vehicle.getVehicleID());
         assertEquals("Buck",vehicle.getVehicleCode());
         assertEquals(100000,vehicle.getVehicleKm());
         assertEquals(80000,vehicle.getValue(),0);
         assertEquals(12000,vehicle.getDepreciatedValue(),0);
-        assertEquals("4D15",vehicle.getDeviceID());
     }
 
 }

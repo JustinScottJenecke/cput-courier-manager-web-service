@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.example</groupId>
-  <artifactId>PassioneNewCbEnd</artifactId>
+  <artifactId>courier-manager-rest-service</artifactId>
   <version>1.0-SNAPSHOT</version>
 
   <parent>
@@ -14,7 +14,7 @@
     <version>2.3.4.RELEASE</version>
   </parent>
 
-  <name>PassioneNewCbEnd</name>
+  <name>Courier Manager</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -41,6 +41,11 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-security</artifactId>
     </dependency>
 
     <dependency>

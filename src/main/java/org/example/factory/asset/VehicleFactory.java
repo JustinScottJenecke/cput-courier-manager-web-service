@@ -12,20 +12,18 @@ import org.example.entity.asset.Vehicle;
 
 public class VehicleFactory {
 
-    public static Vehicle createVehicle(String ID,
+    public static Vehicle createVehicle(String vehicleID,
                                         String vehicleCode,
                                         int vehicleKm,
                                         double value,
-                                        double depreciatedValue,
-                                        String deviceID){
+                                        double depreciatedValue){
 
         Vehicle vehicle = new Vehicle.Builder()
-                .setID(ID)
+                .setVehicleID(vehicleID)
                 .setVehicleCode(vehicleCode)
                 .setVehicleKm(vehicleKm)
                 .setValue(value)
                 .setDepreciatedValue(depreciatedValue)
-                .setDeviceID(deviceID)
                 .build();
 
         return vehicle;

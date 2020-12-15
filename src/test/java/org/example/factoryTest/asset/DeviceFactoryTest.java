@@ -26,15 +26,14 @@ public class DeviceFactoryTest {
                 "Buck",
                 "Block",
                 80000,
-                12000,
-                "1D91");
+                12000);
 
-        assertEquals("1D91",device.getVehicleID());
+        assertEquals("4D15",device.getDeviceID());
         assertEquals("Buck",device.getModel());
         assertEquals("Block",device.getManufacturer());
         assertEquals(80000,device.getValue(),0);
         assertEquals(12000,device.getDepreciatedValue(),0);
-        assertEquals("4D15",device.getID());
+
 
     }
 
