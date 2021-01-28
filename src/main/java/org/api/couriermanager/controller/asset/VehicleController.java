@@ -3,19 +3,18 @@ package org.api.couriermanager.controller.asset;
 import org.api.couriermanager.entity.asset.Vehicle;
 import org.api.couriermanager.service.asset.IVehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/api.couriermanager/vehicle")
+@RestController
 public class VehicleController {
 
     @Autowired
     private IVehicleService vehicleService;
 
+    @GetMapping
     public String welcome(){
-        return "driver options:";
+        return "vehicle options:\nread(id)\ncreate\nupdate\ndelete(id)";
     }
 
 

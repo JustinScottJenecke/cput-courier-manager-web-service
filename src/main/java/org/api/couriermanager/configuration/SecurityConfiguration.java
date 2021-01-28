@@ -26,11 +26,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/api.couriermanager").hasAuthority("ADMIN")
-                .antMatchers("/api.couriermanager/driver").hasAuthority("ADMIN")
+                /*.antMatchers("/api.couriermanager/driver").hasAuthority("ADMIN")
+                .antMatchers("/api.couriermanager/test").hasAuthority("ADMIN")*/
                 .and()
                 .csrf().disable()
                 .formLogin()
-                .loginPage("/login")
                 .permitAll();
     }
 

@@ -4,7 +4,9 @@ import org.api.couriermanager.entity.asset.Device;
 import org.api.couriermanager.repository.asset.IDeviceRepository;
 import org.api.couriermanager.service.asset.IDeviceService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class DeviceService implements IDeviceService {
 
     @Autowired

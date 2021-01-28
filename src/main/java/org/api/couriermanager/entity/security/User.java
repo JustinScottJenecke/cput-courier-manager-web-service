@@ -1,21 +1,26 @@
 package org.api.couriermanager.entity.security;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 @Entity
 public class User {
 
     // @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
-    private int userID;
+    private String userID;
 
+    @Column(nullable = false)
     private String userName;
+
+    @Column(nullable = false)
     private String userPassword;
+
     private boolean active;
     private String roles;
+    private String permissions;
 
     protected User() {
     }
@@ -26,11 +31,10 @@ public class User {
         this.userPassword = b.userPassword;
         this.active = b.active;
         this.roles = b.roles;
+        this.permissions = b.permissions;
     }
 
-    public int getUserID() {
-        return userID;
-    }
+    public String getUserID() { return userID; }
 
     public String getUserName() {
         return userName;
@@ -48,6 +52,24 @@ public class User {
         return roles;
     }
 
+    public String getPermissions() {
+        return permissions;
+    }
+
+    public List<String> getListOfRoles(){
+        if (this.roles.length() > 0) {
+            return Arrays.asList(this.roles.split(","));
+        }
+        return new ArrayList<>();
+    }
+
+    public List<String> getListOfPermissions(){
+        if (this.permissions.length() > 0) {
+            return Arrays.asList(this.permissions.split(","));
+        }
+        return new ArrayList<>();
+    }
+
     @Override
     public String toString() {
         return "Admin{" +
@@ -62,14 +84,15 @@ public class User {
     public static class Builder{
 
         @GeneratedValue(strategy = GenerationType.AUTO)
-        private int userID;
+        private String userID;
 
         private String userName;
         private String userPassword;
         private boolean active;
         private String roles;
+        private String permissions;
 
-        public Builder setUserID(int userID) {
+        public Builder setUserID(String userID) {
             this.userID = userID;
             return this;
         }
@@ -93,6 +116,10 @@ public class User {
             this.roles = roles;
             return this;
         }
+        public Builder setPermissions(String permissions) {
+            this.permissions = permissions;
+            return this;
+        }
 
         public Builder copy(User a){
 
@@ -101,6 +128,7 @@ public class User {
             this.userPassword = a.userPassword;
             this.active =a.active;
             this.roles = a.roles;
+            this.permissions = a.permissions;
 
             return this;
         }

@@ -5,7 +5,9 @@ import org.api.couriermanager.entity.asset.Vehicle;
 import org.api.couriermanager.repository.asset.IVehicleRepository;
 import org.api.couriermanager.service.asset.IVehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class VehicleService implements IVehicleService {
 
     @Autowired

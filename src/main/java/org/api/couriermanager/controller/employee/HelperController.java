@@ -3,21 +3,19 @@ package org.api.couriermanager.controller.employee;
 import org.api.couriermanager.entity.employee.Helper;
 import org.api.couriermanager.service.employee.IHelperService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/api.couriermanager/helper")
+@RestController
 public class HelperController {
 
     @Autowired
     private IHelperService helperService;
 
+    @GetMapping
     public String welcome(){
-        return "helper options";
+        return "helper options:\nread(id)\ncreate\nupdate\ndelete(id)";
     }
-
 
     @RequestMapping(value = "/read/{iD}", method = RequestMethod.GET)
     public Helper read(@PathVariable String iD){

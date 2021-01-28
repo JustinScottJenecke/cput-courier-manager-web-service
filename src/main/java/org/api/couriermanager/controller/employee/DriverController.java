@@ -3,21 +3,24 @@ package org.api.couriermanager.controller.employee;
 import org.api.couriermanager.entity.employee.Driver;
 import org.api.couriermanager.service.employee.IDriverService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/api.couriermanager/driver")
+@RestController
 public class DriverController {
 
     @Autowired
     private IDriverService driverService;
 
+    @GetMapping
     public String welcome(){
-        return "driver options:";
+        return "driver options:\nread(id)\ncreate\nupdate\ndelete(id)";
     }
 
+    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    public String test() {
+        return "drivers service login test";
+    }
 
     @RequestMapping(value = "/read/{iD}", method = RequestMethod.GET)
     public Driver read(@PathVariable String iD){

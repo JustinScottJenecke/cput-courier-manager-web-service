@@ -1,0 +1,9 @@
+{
+  "userID" : "028",
+  "userName" : "boss",
+  "userPassword" : "124abc",
+  "active" : true,
+  "roles" : "ROLE_ADMIN",
+  "permissions" : ""
+
+}

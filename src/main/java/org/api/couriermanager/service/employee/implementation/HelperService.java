@@ -4,7 +4,9 @@ import org.api.couriermanager.entity.employee.Helper;
 import org.api.couriermanager.repository.employee.IHelperRepository;
 import org.api.couriermanager.service.employee.IHelperService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class HelperService implements IHelperService {
 
     @Autowired

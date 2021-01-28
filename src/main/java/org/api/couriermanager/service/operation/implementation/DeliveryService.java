@@ -4,7 +4,9 @@ import org.api.couriermanager.entity.operation.Delivery;
 import org.api.couriermanager.repository.operation.IDeliveryRepository;
 import org.api.couriermanager.service.operation.IDeliveryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class DeliveryService implements IDeliveryService {
 
     @Autowired

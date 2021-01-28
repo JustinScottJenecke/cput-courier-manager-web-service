@@ -4,7 +4,9 @@ import org.api.couriermanager.entity.employee.Driver;
 import org.api.couriermanager.repository.employee.IDriverRepository;
 import org.api.couriermanager.service.employee.IDriverService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class DriverService implements IDriverService {
 
     @Autowired

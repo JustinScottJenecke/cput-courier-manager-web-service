@@ -3,19 +3,21 @@ package org.api.couriermanager.controller.asset;
 import org.api.couriermanager.entity.asset.Device;
 import org.api.couriermanager.service.asset.IDeviceService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
+import java.util.List;
 
 @RequestMapping("/api.couriermanager/device")
+@RestController
 public class DeviceController {
 
     @Autowired
     private IDeviceService deviceService;
 
+    @GetMapping
     public String welcome(){
-        return "driver options:";
+        return "device options:\nread(id)\ncreate\nupdate\ndelete(id)";
     }
 
 
@@ -41,7 +43,7 @@ public class DeviceController {
         return helperService.getAll();
     }*/
 
-    @RequestMapping(value = "/delete/{d}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
     public boolean delete(@PathVariable String id){
 
         return deviceService.delete(id);

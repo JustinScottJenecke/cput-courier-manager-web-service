@@ -3,21 +3,19 @@ package org.api.couriermanager.controller.operation;
 import org.api.couriermanager.entity.operation.Delivery;
 import org.api.couriermanager.service.operation.IDeliveryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/api.couriermanager/delivery")
+@RestController
 public class DeliveryController {
 
     @Autowired
     private IDeliveryService deliveryServiceService;
 
+    @GetMapping
     public String welcome(){
-        return "helper options";
+        return "delivery options:\nread(id)\ncreate\nupdate\ndelete(id)";
     }
-
 
     @RequestMapping(value = "/read/{iD}", method = RequestMethod.GET)
     public Delivery read(@PathVariable String iD){
