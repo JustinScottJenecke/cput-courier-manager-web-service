@@ -1,10 +1,13 @@
 package org.api.couriermanager.service.employee.implementation;
 
 import org.api.couriermanager.entity.employee.Driver;
+import org.api.couriermanager.entity.security.User;
 import org.api.couriermanager.repository.employee.IDriverRepository;
 import org.api.couriermanager.service.employee.IDriverService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class DriverService implements IDriverService {
@@ -20,6 +23,10 @@ public class DriverService implements IDriverService {
     @Override
     public Driver read(String ID) {
         return this.driverRepository.findById(ID).orElseGet(null);
+    }
+
+    public List<Driver> readAll(){
+        return this.driverRepository.findAll();
     }
 
     @Override

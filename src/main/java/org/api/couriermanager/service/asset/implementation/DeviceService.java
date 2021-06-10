@@ -1,10 +1,13 @@
 package org.api.couriermanager.service.asset.implementation;
 
 import org.api.couriermanager.entity.asset.Device;
+import org.api.couriermanager.entity.security.User;
 import org.api.couriermanager.repository.asset.IDeviceRepository;
 import org.api.couriermanager.service.asset.IDeviceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class DeviceService implements IDeviceService {
@@ -20,6 +23,11 @@ public class DeviceService implements IDeviceService {
     @Override
     public Device read(String ID) {
         return this.deviceRepository.findById(ID).orElseGet(null);
+    }
+
+
+    public List<Device> readAll(){
+        return this.deviceRepository.findAll();
     }
 
     @Override

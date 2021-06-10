@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Arrays;
 import java.util.List;
 
+@CrossOrigin
 @RequestMapping("/api.couriermanager/device")
 @RestController
 public class DeviceController {
@@ -36,15 +37,14 @@ public class DeviceController {
 
         return deviceService.update(u,id);
     }
-/*
-    @RequestMapping(value = "/getall", method = RequestMethod.GET)
-    public Set<Helper> getAll() {
 
-        return helperService.getAll();
-    }*/
+    @RequestMapping(value = "/all", method = RequestMethod.GET)
+    public List<Device> readAll() {
+        return this.deviceService.readAll();
+    }
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
-    public boolean delete(@PathVariable String id){
+    public boolean delete(@PathVariable String id) {
 
         return deviceService.delete(id);
     }

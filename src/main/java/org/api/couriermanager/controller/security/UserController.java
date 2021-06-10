@@ -22,7 +22,7 @@ public class UserController {
     }*/
     @GetMapping
     public String welcome(){
-        return "user options:\nread(id)\ncreate\nupdate\ndelete(id)";
+        return "user options:\nread(id)\nall\ncreate\nupdate\ndelete(id)";
     }
     @RequestMapping(value = "/read/{id}", method = RequestMethod.GET)
     public User read(@PathVariable String id) {
@@ -38,6 +38,11 @@ public class UserController {
     public User create(@RequestBody User h){
 
         return userService.create(h);
+    }
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
+    public boolean delete(@PathVariable String id){
+
+        return userService.delete(id);
     }
 
 }

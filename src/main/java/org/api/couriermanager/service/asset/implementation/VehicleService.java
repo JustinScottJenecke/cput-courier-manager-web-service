@@ -2,10 +2,13 @@ package org.api.couriermanager.service.asset.implementation;
 
 
 import org.api.couriermanager.entity.asset.Vehicle;
+import org.api.couriermanager.entity.security.User;
 import org.api.couriermanager.repository.asset.IVehicleRepository;
 import org.api.couriermanager.service.asset.IVehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class VehicleService implements IVehicleService {
@@ -21,6 +24,10 @@ public class VehicleService implements IVehicleService {
     @Override
     public Vehicle read(String ID) {
         return this.vehicleRepository.findById(ID).orElseGet(null);
+    }
+
+    public List<Vehicle> readAll(){
+        return this.vehicleRepository.findAll();
     }
 
     @Override

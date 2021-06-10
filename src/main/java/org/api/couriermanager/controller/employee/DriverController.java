@@ -44,7 +44,7 @@ public class DriverController {
         return helperService.getAll();
     }*/
 
-    @RequestMapping(value = "/delete/{d}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
     public boolean delete(@PathVariable String id){
 
         return driverService.delete(id);
